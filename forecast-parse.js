@@ -1,3 +1,5 @@
+"use strict";
+
 var htmlparser = require('htmlparser2');
 var Q = require('q');
 

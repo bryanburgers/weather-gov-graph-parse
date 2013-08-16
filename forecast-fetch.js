@@ -1,3 +1,5 @@
+"use strict";
+
 var request = require('request');
 var Q = require('q');
 
@@ -9,7 +11,7 @@ module.exports = function fetch(latitude, longitude, hoursAhead) {
 		if (error) {
 			deferred.reject(new Error(error));
 		}
-		else if (response.statusCode != 200) {
+		else if (response.statusCode !== 200) {
 			deferred.reject(new Error('Status code was not 200'));
 		}
 		else {

@@ -1,3 +1,5 @@
+"use strict";
+
 var Q = require('q');
 
 var fetch = require('./forecast-fetch');
