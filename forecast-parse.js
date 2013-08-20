@@ -63,7 +63,7 @@ var fields = [
 	{ name: "relativeHumidity", parse: parseInteger }
 ];
 
-module.exports = function parse(data) {
+module.exports = function parse(data, callback) {
 	var deferred = Q.defer();
 
 	var tablecount = 0;
@@ -177,5 +177,6 @@ module.exports = function parse(data) {
 
 	parser.write(data);
 
-	return deferred.promise;
+
+	return deferred.promise.nodeify(callback);
 };
